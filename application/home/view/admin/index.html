@@ -1,0 +1,48 @@
+{include file="/common/header" /}
+<div>
+    {include file="/common/header-title" /}
+    <div class="body-content">
+        {include file="/common/menu" /}
+        <div class="col-right">
+            <table class="layui-table">
+                <colgroup>
+                    <col width="150">
+                    <col width="200">
+                    <col width="100">
+                    <col width="100">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th>用户名</th>
+                    <th>昵称</th>
+                    <th>是否是管理员</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                {volist name='users' id='user'}
+                <tr>
+                    <td>{$user.username}</td>
+                    <td>{$user.nickname}</td>
+                    <td>
+                        {eq name="$user.competence" value="admin"}是
+                        {else/}
+                        否
+                        {/eq}
+                    </td>
+                    <td>
+                        <button class="layui-btn layui-btn-normal">修改密码</button>
+                        <button class="layui-btn layui-btn-danger">删除</button>
+                    </td>
+                </tr>
+                {/volist}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script>
+
+</script>
+</body>
+</html>

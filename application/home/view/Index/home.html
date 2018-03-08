@@ -1,0 +1,34 @@
+{include file="/common/header" /}
+<div>
+    {include file="/common/header-title" /}
+    <div class="body-content">
+        {include file="/common/menu" /}
+        <div class="col-right"></div>
+    </div>
+</div>
+<script>
+    //Demo
+    layui.use('form', function(){
+        var form = layui.form;
+
+        //监听提交
+        form.on('submit(formDemo)', function(data){
+            $.ajax({
+                method:'post',
+                url:'/home/form/add',
+                data:data.field,
+                success:function(msg){
+                    if(msg.status){
+                        layer.msg(msg.msg);
+                    }else{
+                        $('.fadeForm').load('/www.baidu.com');
+                        layer.msg(msg.msg);
+                    }
+                }
+            });
+            return false;
+        });
+    });
+</script>
+</body>
+</html>

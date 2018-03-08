@@ -1,0 +1,56 @@
+{include file="/common/header" /}
+<div id="print_content" style="width: 90%;margin: 0 auto;text-align: center;">
+    <img id="print_src" src="#" style="width: 100%;margin: 0 auto;" />
+</div>
+<script>
+
+    function GetQueryString(name) {
+        var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if(r!=null)return  unescape(r[2]); return null;
+    }
+
+    function getExplorer(){
+        var explorer = window.navigator.userAgent;
+        //ie
+        if(explorer.indexOf("MISE") >= 0){
+            return "IE";
+        }
+        //firefox
+        else if(explorer.indexOf("firefox") >= 0){
+            return "Firefox";
+        }
+        //Chrome
+        else if(explorer.indexOf("Chrome") >= 0){
+            return "Chrome"
+        }
+    }
+
+    function doPrint(){
+        var bdHtml = window.document.body.innerHTML;
+        var prnHtml = window.document.body.innerHTML;
+        window.print();
+    }
+
+    $(() => {
+        $("#print_src").attr('src' , GetQueryString('src'));
+
+        layui.use('layer' , function(){
+            layer.open({
+                title: '打印'
+                ,icon:1
+                ,content: '是否确认打印内容',
+                btn:['打印' , '返回'],
+                yes:function(index , layero){
+                    layer.close(index);
+                    doPrint();
+                },
+                btn2:function(){
+                    window.history.back();
+                }
+            });
+        })
+    })
+</script>
+</body>
+</html>

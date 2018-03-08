@@ -1,0 +1,77 @@
+---------------------------------------------------------------
+[ 2018-02-25T19:01:55+08:00 ] 0.0.0.0 GET /
+[ info ] localhost:8888/ [运行时间：0.060951s][吞吐率：16.41req/s] [内存消耗：1,754.06kb] [文件加载：51]
+[ info ] [ LANG ] /Users/liyigang/Desktop/tp5/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost:8888',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'Webstorm-1747f1df=8113bee0-0339-4b4f-a556-0693c8628a5d; Phpstorm-21778d3c=73a23896-ec8e-4854-bf25-2631ca3d1c84; JSESSIONID=7287F09821DB2C12B0F2F6D248F62E15',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-02-25T19:02:01+08:00 ] 0.0.0.0 GET /home/index
+[ info ] localhost:8888/home/index [运行时间：0.038494s][吞吐率：25.98req/s] [内存消耗：1,928.52kb] [文件加载：54]
+[ info ] [ LANG ] /Users/liyigang/Desktop/tp5/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'home/index',
+  'route' => 'home/index/home',
+  'option' => 
+  array (
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost:8888',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'Webstorm-1747f1df=8113bee0-0339-4b4f-a556-0693c8628a5d; Phpstorm-21778d3c=73a23896-ec8e-4854-bf25-2631ca3d1c84; JSESSIONID=7287F09821DB2C12B0F2F6D248F62E15',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] /Users/liyigang/Desktop/tp5/application/home/view/index/home.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-02-25T20:27:21+08:00 ] 0.0.0.0 GET /home/upload
+[ info ] localhost:8888/home/upload [运行时间：0.036639s][吞吐率：27.29req/s] [内存消耗：1,926.84kb] [文件加载：54]
+[ info ] [ LANG ] /Users/liyigang/Desktop/tp5/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'home/upload',
+  'route' => 'home/upload/index',
+  'option' => 
+  array (
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost:8888',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'cookie' => 'Webstorm-1747f1df=8113bee0-0339-4b4f-a556-0693c8628a5d; Phpstorm-21778d3c=73a23896-ec8e-4854-bf25-2631ca3d1c84; JSESSIONID=7287F09821DB2C12B0F2F6D248F62E15',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] /Users/liyigang/Desktop/tp5/application/home/view/upload/index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File

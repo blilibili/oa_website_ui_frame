@@ -1,0 +1,78 @@
+{include file="/common/header" /}
+<div>
+    {include file="/common/header-title" /}
+    <div class="body-content">
+        {include file="/common/menu" /}
+        <div class="col-right">
+            <input type="hidden" name="username" class="username" value="{$userInfo.username}" />
+            <input type="hidden" name="bg" class="bg" value="{$userInfo.bg}" />
+            <div class="upload">
+
+            </div>
+            <div>
+                <button type="button" class="layui-btn" id="test1">
+                    <i class="layui-icon">&#xe67c;</i>上传图片
+                </button>
+            </div>
+
+            <div style="margin-top: 25px;">
+                <button type="button" class="layui-btn savePicSrc">
+                    <i class="layui-icon">&#xe605;</i>提交上传图片
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    //Demo uploadHandler
+    layui.use('upload', function(){
+        function arrRepeat(arr){
+            return /(\x0f[^\x0f]+)\x0f[\s\S]*\1/.test("\x0f"+arr.join("\x0f\x0f") +"\x0f");
+        }
+        var upload = layui.upload;
+
+        var uploadImg = [];
+        //执行实例
+        var uploadInst = upload.render({
+            elem: '#test1' //绑定元素
+            ,url: 'uploadHandler/' //上传接口
+            ,multiple:true //允许多文件上传
+            ,done: function(res){
+                //上传完毕回调
+                var uploadImg = new Image();
+                var img_src = '/uploads/' + res.date + '/' + res.file_name;
+                var tmpl = "<div class='upload-img'><img src="+ img_src +" /></div>"
+                $('.upload').append(tmpl);
+
+            }
+            ,error: function(res){
+                //请求异常回调
+                console.log(res);
+            }
+        });
+
+        $('.savePicSrc').on('click' , () => {
+            var data = {
+                username:$('.username').val(),
+                bg:$('.bg').val(),
+                pic_src:[]
+            };
+
+            //判断图片是否有重复
+            $('.upload-img').each((k , v) => {
+                data.pic_src.push($(v).find('img').attr('src'));
+            });
+            if(arrRepeat(data.pic_src)){
+                layer.msg('图片有重复,请刷新重新上传')
+            }else{
+                //数组格式转换
+                data.pic_src = JSON.stringify(data.pic_src);
+                liAjax('post' , '/upload/save/handler' , data , '图片上传成功' , '图片上传失败' , '/home/index')
+            }
+        })
+    });
+
+</script>
+</body>
+</html>

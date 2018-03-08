@@ -1,0 +1,110 @@
+.absPos(@top , @left){
+  position: absolute;
+  top: @top;
+  left: @left;
+}
+body{
+  line-height: 1.6;
+  font-family: "Helvetica Neue","Hiragino Sans GB","Microsoft YaHei","\9ED1\4F53",Arial,sans-serif;
+  color: #353535;
+  font-size: 14px;
+  min-width: 1200px;
+  background: #f8f9fb;
+}
+.head_box {
+  padding: 0 40px;
+  position: relative;
+  height: 60px;
+  background-color: #fff;
+  box-shadow: 0 1px 2px rgba(150,150,150,0.3);
+}
+.head_logo{
+  float: left;
+  padding-top: 11px;
+  font-size: 24px;
+}
+.head_right{
+  position: absolute;
+  right: 40px;
+  display: inline-block;
+  font-size: 16px;
+  z-index: 9;
+  top:17px;
+  width:300px;
+}
+.body-content{
+  padding-bottom: 40px;
+  box-sizing: border-box;
+  min-height: 800px;
+  padding-top: 20px;
+}
+.col-left{
+  width: 256px;
+  float: left;
+  min-height: 826px;
+  border-right:1px solid #e7e7eb
+}
+
+.col-right{
+  overflow: auto;
+  min-height: 700px;
+  width: 70%;
+  margin: 0 auto;
+}
+.menu > ul > a{
+  display: block;
+  padding: 0 34px 0;
+  color: #353535;
+  text-decoration: none;
+}
+.menu > ul > a > li{
+  font-size: 16px;
+  color:  #353535;
+  line-height: 2.88888;
+}
+.menu{
+  position: relative;
+  width: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  line-height: 40px;
+  color: #9a9a9a;
+}
+
+.ava_circle{
+  border-radius: 50px;
+  border:1px solid #9a9a9a;
+  height: 25px;
+  width:25px;
+}
+
+.login-menu{
+  border:1px solid #e2e2e2;
+  .absPos(60px , 77%);
+  width: 40px;
+  height: 20px;
+  padding: 20px;
+  background: white;
+  text-align: center;
+  z-index: 100000;
+  cursor: pointer;
+}
+
+.user-panel>li{
+  padding: 20px;
+}
+
+
+.upload-img{
+  margin: 20px;
+  width: 200px;
+  padding: 20px;
+  border: 1px solid #E4E7ED;
+  display: inline-block;
+}
+
+.upload-img > img{
+  width: 200px;
+}

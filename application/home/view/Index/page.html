@@ -1,0 +1,47 @@
+{include file="/common/header" /}
+    <div>
+        <table class="layui-table">
+            <colgroup>
+                <col>
+                <col>
+                <col>
+            </colgroup>
+            <thead>
+            <tr>
+                <th>id</th>
+                <th>用户名</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            {volist name="users" id="vo"}
+            <tr>
+                <td>{$vo.id}</td>
+                <td>{$vo.username}</td>
+                <td>
+                    <button class="layui-btn layui-btn-normal">编辑</button>
+                    <button class="layui-btn layui-btn-danger delHandler" data-id="{$vo.id}">删除</button>
+                </td>
+            </tr>
+            {/volist}
+            </tbody>
+        </table>
+
+    </div>
+<script>
+    $(function () {
+        $('.delHandler').on('click' , function(){
+            var id = $(this).attr('data-id');
+            $.ajax({
+                method:'post',
+                url:'/home/form/del',
+                data:{id:id},
+                success:function(msg){
+                    window.location.reload();
+                }
+            })
+        })
+    })
+</script>
+</body>
+</html>
